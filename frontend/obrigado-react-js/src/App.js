@@ -21,7 +21,7 @@ const wallet = new Wallet({ network: 'testnet' });
 
 // Setup on page load
 window.onload = async () => {
-  let isSignedIn = await wallet.startUp();
+  // let isSignedIn = await wallet.startUp();
   // isSignedIn ? signedInUI() : signedOutUI();
   // getGreeting();
 };
@@ -56,7 +56,7 @@ function App() {
       wallet.signIn();
       setIsDragDropVisible(true);
     }
-  }, [isDragDropVisible, wallet]);
+  }, [isDragDropVisible]);
 
   return (
     <div className="app">
