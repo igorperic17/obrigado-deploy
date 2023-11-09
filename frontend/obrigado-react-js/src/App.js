@@ -42,6 +42,7 @@ function App() {
             "repository_url": "https://nftstorage.link/ipfs/bafkreiciq7gn6nwyqbapau4gk4ks52574yusxytlymrmncvb6rxrpwndfu", 
             "bounty": 10
           },
+          
           gas: "30000000000000",
           deposit: "10000000000000000000000000"
         }).then(() => {
