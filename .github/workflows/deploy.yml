@@ -1,0 +1,28 @@
+name: Deploy to Vercel
+
+on:
+  push:
+    branches:
+      - main  # Set this to the branch you want to deploy
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Vercel Action
+        uses: amondnet/vercel-action@v20
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }} # Set the Vercel token
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }} # Set the Vercel org id
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }} # Set the Vercel project id
+          vercel-args: '--prod' # Additional arguments for the Vercel CLI
+        env:
+          CI: true
