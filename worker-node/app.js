@@ -258,9 +258,9 @@ async function listenToJobQueue() {
           await processTask(contract, task);
           break; // Exit the loop after one task is processed
         } else {
-          console.log(
-            "Result already submitted for task, searching for a new task."
-          );
+          // console.log(
+          //   "Result already submitted for task, searching for a new task."
+          // );
         }
       }
     } catch (error) {
